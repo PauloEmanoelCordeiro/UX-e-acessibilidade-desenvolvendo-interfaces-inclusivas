@@ -1,0 +1,167 @@
+
+    /* =======================================================
+       1. ESTILOS GERAIS E ACESSIBILIDADE
+       ======================================================= */
+    :root {
+      --cor-fundo: #F4F6F9;
+      --cor-card: #FFFFFF;
+      --cor-texto: #1A1A1A;
+      --cor-primaria: #004680; /* Azul escuro com alto contraste */
+      --cor-sucesso: #005F27;
+      --cor-alerta: #8B0000;
+      --cor-borda: #CCCCCC;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 22px; /* Fonte aumentada por padrão */
+      line-height: 1.6;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      padding-bottom: 30px;
+    }
+
+    /* Cabeçalho Fixo e Claro */
+    header {
+      background-color: var(--cor-primaria);
+      color: #FFFFFF;
+      text-align: center;
+      padding: 20px 15px;
+      border-bottom: 5px solid #002B50;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    /* Container Principal */
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    /* =======================================================
+       2. NAVEGAÇÃO / MENU DE BOTÕES GRANDES
+       ======================================================= */
+    .menu-navegacao {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    /* Estilo de Botão Acessível */
+    .btn-menu {
+      display: block;
+      background-color: var(--cor-card);
+      color: var(--cor-primaria);
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+      padding: 20px;
+      border: 3px solid var(--cor-primaria);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Efeito ao passar o mouse ou focar com o teclado */
+    .btn-menu:hover, 
+    .btn-menu:focus {
+      background-color: var(--cor-primaria);
+      color: #FFFFFF;
+      outline: 4px solid #FFD700; /* Destaque amarelo para foco */
+    }
+
+    /* =======================================================
+       3. SEÇÕES DE CONTEÚDO (TRUQUE CSS :TARGET)
+       ======================================================= */
+    /* Esconde todas as seções por padrão */
+    .secao-conteudo {
+      display: none;
+      background-color: var(--cor-card);
+      padding: 25px;
+      border-radius: 12px;
+      border: 2px solid var(--cor-borda);
+      margin-top: 20px;
+    }
+
+    /* Exibe a seção de início se nenhuma estiver selecionada */
+    #inicio {
+      display: block;
+    }
+
+    /* Exibe a seção que corresponde ao link clicado */
+    .secao-conteudo:target {
+      display: block;
+    }
+
+    /* Esconde a seção inicial quando outra seção for ativada */
+    :target ~ #inicio {
+      display: none;
+    }
+
+    /* Estilização dos textos internos */
+    h2 {
+      color: var(--cor-primaria);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid var(--cor-borda);
+      padding-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    /* Caixas de Alerta e Dicas */
+    .alerta {
+      background-color: #FFEBEE;
+      border-left: 8px solid var(--cor-alerta);
+      color: var(--cor-alerta);
+      padding: 15px;
+      margin: 15px 0;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .dica-segura {
+      background-color: #E8F5E9;
+      border-left: 8px solid var(--cor-sucesso);
+      color: var(--cor-sucesso);
+      padding: 15px;
+      margin: 15px 0;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    /* Botão para voltar ao topo/início */
+    .btn-voltar {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #555555;
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 12px 24px;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .btn-voltar:hover, 
+    .btn-voltar:focus {
+      background-color: #000000;
+      outline: 3px solid #FFD700;
+    }
+  
