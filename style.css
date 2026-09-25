@@ -1,167 +1,185 @@
+/* RESET E CONFIGURAÇÕES GERAIS DE ACESSIBILIDADE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    /* =======================================================
-       1. ESTILOS GERAIS E ACESSIBILIDADE
-       ======================================================= */
-    :root {
-      --cor-fundo: #F4F6F9;
-      --cor-card: #FFFFFF;
-      --cor-texto: #1A1A1A;
-      --cor-primaria: #004680; /* Azul escuro com alto contraste */
-      --cor-sucesso: #005F27;
-      --cor-alerta: #8B0000;
-      --cor-borda: #CCCCCC;
-    }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F4F6F9;
+    color: #1A1A1A;
+    line-height: 1.6;
+    font-size: 20px;
+    /* Fonte base ampliada */
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+/* CABEÇALHO FIXO E DE ALTO CONTRASTE */
+header {
+    background-color: #003366;
+    /* Azul escuro */
+    color: #FFFFFF;
+    padding: 20px 15px;
+    text-align: center;
+    border-bottom: 5px solid #FFCC00;
+    /* Amarelo para destaque */
+}
 
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* CONTAINER PRINCIPAL */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* MENSAGEM DE BOAS-VINDAS */
+.boas-vindas {
+    background-color: #E6F0FA;
+    border-left: 8px solid #003366;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.boas-vindas h2 {
+    font-size: 1.6rem;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+/* CARTOES DE DICAS */
+.cartao-dica {
+    background-color: #FFFFFF;
+    border: 3px solid #CCCCCC;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cartao-dica h3 {
+    color: #003366;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icone {
+    font-size: 2rem;
+}
+
+.cartao-dica p {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* CAIXA DE ALERTA DENTRO DA DICA */
+.alerta {
+    background-color: #FFF3CD;
+    border: 2px solid #FFEBAA;
+    color: #856404;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* BOTÃO DE EMERGÊNCIA / AJUDA */
+.secao-ajuda {
+    background-color: #D9534F;
+    /* Vermelho visível */
+    color: #FFFFFF;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 30px;
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    width: 600px;
+    margin: 0 !important;
+}
+
+.secao-ajuda h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.secao-ajuda p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.botao-ajuda {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #D9534F;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.botao-ajuda:hover,
+.botao-ajuda:focus {
+    background-color: #FFEBEE;
+    outline: 4px solid #FFCC00;
+    /* Destaque visual para acessibilidade */
+}
+
+/* RODAPÉ */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #003366;
+    color: #FFFFFF;
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+
+.modal-fundo{
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+ol {
+    padding: 40px;
+}
+
+/* AJUSTES PARA TELAS MENORES (CELULARES) */
+@media (max-width: 600px) {
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 22px; /* Fonte aumentada por padrão */
-      line-height: 1.6;
-      background-color: var(--cor-fundo);
-      color: var(--cor-texto);
-      padding-bottom: 30px;
-    }
-
-    /* Cabeçalho Fixo e Claro */
-    header {
-      background-color: var(--cor-primaria);
-      color: #FFFFFF;
-      text-align: center;
-      padding: 20px 15px;
-      border-bottom: 5px solid #002B50;
+        font-size: 18px;
     }
 
     header h1 {
-      font-size: 2rem;
-      margin-bottom: 5px;
+        font-size: 1.6rem;
     }
 
-    header p {
-      font-size: 1.2rem;
+    .cartao-dica h3 {
+        font-size: 1.3rem;
     }
-
-    /* Container Principal */
-    main {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 0 15px;
-    }
-
-    /* =======================================================
-       2. NAVEGAÇÃO / MENU DE BOTÕES GRANDES
-       ======================================================= */
-    .menu-navegacao {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-
-    /* Estilo de Botão Acessível */
-    .btn-menu {
-      display: block;
-      background-color: var(--cor-card);
-      color: var(--cor-primaria);
-      text-decoration: none;
-      text-align: center;
-      font-size: 1.4rem;
-      font-weight: bold;
-      padding: 20px;
-      border: 3px solid var(--cor-primaria);
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    /* Efeito ao passar o mouse ou focar com o teclado */
-    .btn-menu:hover, 
-    .btn-menu:focus {
-      background-color: var(--cor-primaria);
-      color: #FFFFFF;
-      outline: 4px solid #FFD700; /* Destaque amarelo para foco */
-    }
-
-    /* =======================================================
-       3. SEÇÕES DE CONTEÚDO (TRUQUE CSS :TARGET)
-       ======================================================= */
-    /* Esconde todas as seções por padrão */
-    .secao-conteudo {
-      display: none;
-      background-color: var(--cor-card);
-      padding: 25px;
-      border-radius: 12px;
-      border: 2px solid var(--cor-borda);
-      margin-top: 20px;
-    }
-
-    /* Exibe a seção de início se nenhuma estiver selecionada */
-    #inicio {
-      display: block;
-    }
-
-    /* Exibe a seção que corresponde ao link clicado */
-    .secao-conteudo:target {
-      display: block;
-    }
-
-    /* Esconde a seção inicial quando outra seção for ativada */
-    :target ~ #inicio {
-      display: none;
-    }
-
-    /* Estilização dos textos internos */
-    h2 {
-      color: var(--cor-primaria);
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      border-bottom: 2px solid var(--cor-borda);
-      padding-bottom: 10px;
-    }
-
-    p {
-      margin-bottom: 15px;
-    }
-
-    /* Caixas de Alerta e Dicas */
-    .alerta {
-      background-color: #FFEBEE;
-      border-left: 8px solid var(--cor-alerta);
-      color: var(--cor-alerta);
-      padding: 15px;
-      margin: 15px 0;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-
-    .dica-segura {
-      background-color: #E8F5E9;
-      border-left: 8px solid var(--cor-sucesso);
-      color: var(--cor-sucesso);
-      padding: 15px;
-      margin: 15px 0;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-
-    /* Botão para voltar ao topo/início */
-    .btn-voltar {
-      display: inline-block;
-      margin-top: 20px;
-      background-color: #555555;
-      color: #FFFFFF;
-      text-decoration: none;
-      padding: 12px 24px;
-      font-weight: bold;
-      border-radius: 8px;
-    }
-
-    .btn-voltar:hover, 
-    .btn-voltar:focus {
-      background-color: #000000;
-      outline: 3px solid #FFD700;
-    }
-  
+}
